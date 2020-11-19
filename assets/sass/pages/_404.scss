@@ -1,0 +1,69 @@
+.error404 {
+	svg {
+	    width: 100%;
+	    height: 100%;
+	}
+
+	a {
+	    margin: 5em 0;
+	    color: #389e79;
+	    text-decoration: none;
+	}
+
+	a:hover {
+	    text-decoration: underline;
+	    color: #2e6c56;
+	}
+
+
+	.data {
+	    text-align: center;
+	    margin: .5em .5em;
+	}
+
+	/* Here you can change the size of the animation. Change the parameter height. */
+	.anim-icon {
+	    width: 100%;
+	    height: 35vmax; /* size is relative to screen size */
+	    border: none;
+	    margin: 0 auto;
+	    text-align: center;
+	}
+
+	.anim-icon:focus {
+	    background: #fff !important;
+	    outline: none !important;
+	}
+
+	/* Here you can change the size for mobile screens */
+	@media (max-width: 1080px) {
+	    .anim-icon {
+	        height: 45vmax; /* size is relative to screen size */
+	    }
+	}
+
+	/* Tablet */
+
+	@media (max-width: 799px) {
+	    .anim-icon {
+	        height: 50vmax; /* size is relative to screen size */
+	    }
+	}
+
+
+	/* Mobile */
+
+	@media (max-width: 520px) {
+	    h1 {
+	        font-size: 1.4em;
+	    }
+	    input {
+	        min-width: 220px;
+	    }
+	    .anim-icon {
+	        margin: 1rem auto;
+	        margin-top: 2.5rem;
+	        height: 40vmax; /* size is relative to screen size */
+	    }
+	}
+}

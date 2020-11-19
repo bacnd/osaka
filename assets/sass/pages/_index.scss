@@ -1,0 +1,518 @@
+@charset "utf-8";
+
+#content {
+	word-wrap: break-word;
+	.inner-content {
+		h2.box-title {
+			@include setfont(25, bold, $cl-main, $fontrobo);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			border-bottom: 1px solid $cl-main;
+			padding-bottom: 14px;
+			display: table;
+			// margin-left: 292px;
+			@include transition;
+			@media screen and (max-width: 1024px) {
+				margin-left: 0;
+			}
+			@media screen and (max-width: $screen-sp) {
+				margin-left: 0;
+			}
+		}
+		.view-all {
+			@include setfont(18, null, $cl-main, $fontrobo);
+			text-transform: uppercase;
+			a {
+				color: $cl-main;
+				position: relative;
+				padding-right: 28px;
+				letter-spacing: 1.6px;
+				&:after {
+					content: '';
+					position: absolute;
+					background: url('../images/arrow-more.png') no-repeat;
+					width: 18px;
+					height: 10px;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					right: 0;
+				}
+			}
+		}
+		.view-all-sp {
+			@include setfont(20, null, $cl-main, $fontrobo);
+			text-transform: uppercase;
+			border: 1px solid $cl-main;
+			text-align: center;
+			height: 40px;
+			line-height: 40px;
+			margin: 0 20px;
+			margin-top: 40px;
+			letter-spacing: 1.6px;
+			&:hover {
+				background: $cl-main;
+				color: $white;
+				opacity: 1;
+			}
+		}
+	}
+	.box-slider-main {
+		text-align: center;
+		@media screen and (max-width: $screen-sp) {
+			margin-bottom: 60px;
+			padding-top: 80px;
+		}
+		img {
+			margin: 0 auto;
+			width: 100%;
+		}
+		.list-slider-main {
+			max-height: 750px;
+			@media screen and (min-width: 769px) {
+				overflow: hidden;
+			}
+			.arrow-slider {
+				max-width: 1266px;
+				width: 100%;
+				position: absolute;
+				z-index: 9;
+				right: 0;
+				left: 0;
+				bottom: 54px;
+				margin: auto;
+				@media screen and (max-width: 768px) {
+					bottom: -46px;
+				}
+				.slick_prev, .slick_next {
+					cursor: pointer;
+				}
+				.slick_prev {
+					right: 33px;
+				    position: absolute;
+				    bottom: 0;
+				    padding-right: 23px;
+					@media screen and (max-width: 768px) {
+						right: 27px;
+						padding-right: 50px;
+					}
+				}
+				.slick_next {
+					right: 0;
+				    position: absolute;
+				    bottom: 0;
+				    padding-left: 23px;
+					@media screen and (max-width: 768px) {
+						right: 10px;
+						border-left: 1px solid #000;
+    					padding-left: 25px;
+					}
+				}
+			}
+			.slick-track {
+				overflow: hidden;
+			}
+		}
+		.lo-scroll-down {
+			max-width: 1266px;
+			width: 100%;
+			margin: auto;
+			position: relative;
+			.scroll-down {
+				position: absolute;
+				left: 0;
+				bottom: 54px;
+				@media screen and (max-width: 920px) {
+					bottom: 20px;
+				}
+				img {
+					animation: scrollDown 2s infinite;
+					-webkit-animation: scrollDown 2s infinite;
+					-moz-animation: scrollDown 2s infinite;
+					-o-animation: scrollDown 2s infinite;
+				}
+			}
+		}
+	}
+	.box-owners-message {
+		background: $cl-main;
+		padding: 10px 0 132px;
+		@media screen and (max-width: $screen-sp) {
+	    	padding-bottom: 0;
+	    }
+		.inner-content {
+			padding-top: 55px;
+			text-align: center;
+			background: url('../images/banner-owner.png')  center no-repeat;
+			background-size: contain;
+			height: 537px;
+		    margin-top: 70px;
+		    margin-left: 136px;
+			h2 {
+				color: $white;
+				border-color: $white;
+				letter-spacing: 2.3px;
+				padding-bottom: 18px;
+				margin-left: 156px;
+				@media screen and (max-width: 1024px) {
+			    	margin-left: 0;
+			    }
+			}
+			img {
+				margin-left: 136px;
+				margin-top: -4px;
+			}
+		    @media screen and (max-width: 1024px) {
+		    	margin-left: 0;
+		    }
+		    @media screen and (max-width: $screen-sp) {
+		    	padding-top: 0;
+		    	background: url('../images/banner-owner-sp.jpg')  center no-repeat;
+		    	background-size: contain;
+		    	height: 500px;
+		    	margin-top: 20px;
+		    }
+		}
+	}
+	.box-news {
+		.inner-content {
+			padding: 87px 0 0;
+			.box-header {
+				margin-bottom: 32px;
+				.inner-box-header {
+					@include dlflex;
+					justify-content: space-between;
+					align-items: center;
+				}
+			}
+			.box-content {
+				max-width: 1366px;
+				margin: auto;
+				.news-list {
+					@include dlflex;
+					flex-flow: wrap;
+					.item-news {
+						@include flexwidth(25%);
+						@include transition;
+						@media screen and (max-width: $screen-sp) {
+							@include flexwidth(50%);
+						}
+						@media screen and (max-width: 375px) {
+							@include flexwidth(100%);
+						}
+						img {
+							width: 100%;
+						}
+						.item-news-body {
+							padding: 30px 50px 42px;
+							@media screen and (max-width: 1024px) {
+								padding: 25px 20px 35px;
+								@media screen and (max-width: $screen-sp) {
+									background: #CCCCCC;
+								}
+							}
+							.item-news-date {
+								@include setfont(24, bold, null, $fontrobo);
+								text-transform: uppercase;
+								margin-top: 10px;
+								letter-spacing: 0.8px;
+							}
+							.item-news-title {
+								@include setfont(18, bold, null, $fontyugo);
+								padding: 18px 0 11px;
+								a {
+									color: $cl-main;
+								}
+							}
+							p {
+
+							}
+						}
+						& + .item-news {
+							border-left: 1px solid #CCCCCC;
+							@media screen and (max-width: $screen-sp) {
+								border-color: $white;
+								@media screen and (max-width: 375px) {
+									border: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.box-menu {
+		background: url('../images/bg-menu.jpg') center no-repeat;
+		background-size: cover;
+		height: 750px;
+		color: $white;
+		@include dlflex;
+		align-items: center;
+		a {
+			color: $white;
+			letter-spacing: 2px;
+		}
+		@media screen and (max-width: $screen-sp) {
+			height: auto;
+			margin-top: 30px;
+			background: none;
+			color: $cl-main;
+			flex-flow: column;
+			a {
+				color: $cl-main;
+			}
+		}
+		.img-box {
+			margin-bottom: 20px;
+		}
+		.inner-content {
+			@media screen and (min-width: 769px) {
+				h2 {
+					color: $white;
+					border-color: $white;
+				}
+			}
+			.box-content {
+				margin-top: 35px;
+				p {
+					@include fontsize(19);
+					line-height: 2;
+				}
+				.cate-menu {
+					@include dlflex;
+					@media screen and (max-width: 375px) {
+						flex-wrap: wrap;
+						margin-top: 20px;
+					}
+					.list-cate-menu {
+						min-width: 150px;
+						@include setfont(20, Bold, null, $fontrobo);
+						margin-top: 13px;
+						line-height: 1.65;
+						@media screen and (max-width: $screen-sp) {
+							min-width: inherit;
+							@include flexwidth(33.33%);
+							@media screen and (max-width: 375px) {
+								margin: 0;
+								@include flexwidth(50%);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.box-blog {
+		@media screen and (min-width: 769px) {
+			background: #CCCCCC;
+		}
+		.inner-content {
+			padding-top: 97px;
+			padding-bottom: 55px;
+			@media screen and (max-width: $screen-sp) {
+				padding-top: 50px;
+				padding-bottom: 0;
+			}
+			.box-header {
+				margin-bottom: 42px;
+				.inner-box-header {
+					@include dlflex;
+					justify-content: space-between;
+					align-items: center;
+				}
+			}
+			.box-content {
+				@media screen and (max-width: $screen-sp) {
+					.container {
+						padding: 0;
+					}
+					background: #CCC;
+					padding-bottom: 40px;
+				}
+				.blog-list {
+					@include dlflex;
+					// justify-content: space-between;
+					@media screen and (max-width: $screen-sp) {
+						flex-wrap: wrap;
+						padding-bottom: 10px;
+						border-bottom: 1px solid $white;
+					}
+					.item-blog {
+						@include flexwidth(25%);
+						@include transition;
+						@media screen and (max-width: $screen-sp) {
+							@include flexwidth(50%);
+							@media screen and (max-width: 375px) {
+								margin: 0;
+								@include flexwidth(100%);
+							}
+							img {
+								width: 100%;
+							}
+						}
+						.item-blog-body {
+							padding-right: 25px;
+							@media screen and (max-width: $screen-sp) {
+								padding: 0 15px 15px;
+							}
+							.item-blog-date {
+								@include setfont(21, bold, null, $fontrobo);
+								text-transform: uppercase;
+								margin-top: 34px;
+								letter-spacing: 0.8px;
+							}
+							.item-blog-title {
+								margin-top: 7px;
+								a {
+									color: $cl-main;
+								}
+							}
+						}
+						@media screen and (max-width: $screen-sp) {
+							&:nth-child(3), &:nth-child(4) {
+								display: none;
+							}
+							& + .item-blog {
+								border-left: 1px solid $white;
+								@media screen and (max-width: 375px) {
+									border: none;
+								}
+							}
+						}
+					}
+				}
+				.view-all-sp {
+					color: $white;
+					border-color: $white;
+					&:hover {
+						color: $cl-main;
+						background: $white;
+					}
+				}
+			}
+		}
+	}
+	.box-access {
+		.inner-content {
+			padding-top: 93px;
+			padding-bottom: 20px;
+			.box-content {
+				margin-top: 32px;
+				.name-company {
+					@include setfont(29, bold, null, $fontrobo);
+					letter-spacing: 2px;
+				}
+				.address {
+					@include setfont(20, bold, null, $fontrobo);
+					letter-spacing: 1px;
+					margin-top: 2px;
+				}
+				p {
+					@include setfont(17, 600, null, $fontyugo);
+					line-height: 1.85;
+					margin-top: 12px;
+					letter-spacing: 0.5px;
+					a {
+						color: #000;
+					}
+				}
+				.maps {
+					margin-top: 38px;
+					width: 685px;
+					@media screen and (max-width: 1024px) {
+						margin-left: auto;
+						margin-right: auto;
+					}
+					@media screen and (max-width: $screen-sp) {
+						width: calc(100% + 20px);
+					    margin-left: -10px;
+					    margin-right: -10px;
+					    img {
+					    	width: 100%;
+					    }
+					}
+					.more-access {
+						text-transform: uppercase;
+						@include setfont(18, null, #000, $fontrobo);
+						position: relative;
+						@include dlflex;
+						justify-content: flex-end;
+						padding-right: 25px;
+						margin-top: 12px;
+						letter-spacing: 0.8px;
+						@media screen and (max-width: $screen-sp) {
+							margin-right: 15px;
+						}
+						&:after {
+							content: '';
+							position: absolute;
+							background: url('../images/arrow-more-right.png') center no-repeat;
+							width: 11px;
+							height: 20px;
+							top: 0;
+							bottom: 0;
+							right: 0;
+							margin: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+	.box-sns {
+		.inner-content {
+			padding-top: 104px;
+			@media screen and (max-width: $screen-sp) {
+				padding-top: 60px;
+			}
+			.box-content {
+				@include dlflex;
+				justify-content: center;
+				margin-top: 49px;
+				margin-bottom: 130px;
+				@media screen and (max-width: $screen-sp) {
+					margin-bottom: 50px;
+					flex-wrap: wrap;
+				}
+				.sns-col {
+					text-align: center;
+					& + .sns-col {
+						margin-left: 50px;
+					}
+					@media screen and (max-width: $screen-sp) {
+						@include flexwidth(100%);
+						img {
+						    margin: 0 auto;
+						}
+						&:first-child {
+							order: 1;
+						}
+						&:last-child {
+							order: 0;
+						}
+						& + .sns-col {
+							margin-left: 0;
+							margin-bottom: 25px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes scrollDown {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	50% {
+		transform: translate3d(0, -5%, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+
+}

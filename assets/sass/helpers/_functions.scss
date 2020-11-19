@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+/*get vw*/
+@function vw($target) {
+	$vw: (750 * 0.01) * 1px;
+	@return ($target / $vw) * 1vw;
+}
+
+/*get vwl*/
+@function vwl($target) {
+	$vw: (567 * 0.01) * 1px;
+	@return ($target / $vw) * 1vw;
+}

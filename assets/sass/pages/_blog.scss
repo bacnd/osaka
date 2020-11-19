@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+#content {
+	.page-blog {
+	    padding-bottom: 53px;
+		.inner-content {
+			@media screen and (max-width: $screen-sp) {
+				margin-top: 47px;
+			}
+			.box-content {
+				padding-bottom: 0;
+				.container {
+					padding: 0;
+				}
+				.blog-list {
+					@include dlflex;
+					flex-wrap: wrap;
+					padding-bottom: 0;
+    				border: none;
+					.item-blog {
+						background: #E6E6E6;
+						@include transition;
+						overflow: hidden;
+						a {
+							color: $cl-main;
+						}
+						border-right: 1px solid $white;
+						figure {
+							width: 101%; 
+							img {
+								width: 100%;
+							}
+						}
+						.item-blog-body {
+							padding: 0 25px 36px 29px;
+							@media screen and (max-width: $screen-sp) {
+								padding: 0 20px 36px 20px;
+							}
+							.item-blog-date {
+								margin-top: 0;
+								padding-top: 28px;
+								@include setfont(26, bold, $cl-main, $fontrobo);
+							}
+							.item-blog-title {
+								@include fontsize(20);
+								margin-top: 8px;
+								line-height: 1.55;
+							}
+						}
+						@media screen and (min-width: 1025px) {
+							@include flexwidth(25%);
+							figure {
+								width: 100.5%;
+							}
+						}
+						@media screen and (max-width: 1024px) and (min-width: 769px) {
+							@include flexwidth(33.3333%);
+						}
+						@media screen and (max-width: $screen-sp) {
+							@include flexwidth(50%);
+						}
+						@media screen and (max-width: 375px) {
+							@include flexwidth(100%);
+							border: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	.page-blog-detail {
+		.inner-content {
+			@media screen and (max-width: $screen-sp) {
+				margin-top: 47px;
+			}
+			.ct-header {
+				select {
+					&.archive {
+						font-weight: normal;
+					}
+				}
+			}
+			.ct-body {
+				.ctbd-header {
+					.info-page-detail {
+						@include dlflex;
+						flex-direction: column;
+						flex-wrap: wrap;
+						figure {
+							text-align: center;
+							max-height: 683px;
+							overflow: hidden;
+							@media screen and (max-width: $screen-sp) {
+								margin: 42px -10px 0;
+							}
+						}
+						.if-date {
+							@include setfont(30, bold, $cl-main, $fontrobo);
+							letter-spacing: 1px;
+							padding: 26px 0 24px;
+							@include transition;
+							@media screen and (min-width: 769px) {
+								order: -1;
+							}
+							@media screen and (max-width: $screen-sp) {
+								@include fontsize(26);
+							}
+						}
+						.if-title-post {
+							@include setfont(30, null, $cl-main, $fonthira);
+							margin: 0;
+							@include fontsize(22);
+							@include transition;
+						}
+					}
+				}
+				.ctbd-content {
+					max-width: 684px;
+					width: 100%;
+					margin: auto;
+					letter-spacing: -0.5px;
+					p {
+						@include fontsize(20);
+					    margin: 41px 0 44px;
+    					line-height: 2;
+    					@media screen and (max-width: $screen-sp) {
+							@include fontsize(16);
+						}
+					}
+				}
+			}
+		}
+	}
+	.box-sns {
+		&.page-blog {
+			.inner-content {
+				padding-top: 37px;
+			}
+		}
+	}
+}

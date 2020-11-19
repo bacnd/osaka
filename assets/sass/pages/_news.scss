@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+#content {
+	.page-news {
+		.inner-content {
+			padding: 0;
+			@media screen and (max-width: $screen-sp) {
+				margin-top: 47px;
+			}
+			.box-content {
+				.news-list {
+					.item-news {
+						@include flexwidth(33.33%);
+						@include transition;
+						@media screen and (max-width: $screen-sp) {
+							@include flexwidth(50%);
+							@media screen and (max-width: 375px) {
+								@include flexwidth(100%);
+							}
+						}
+						.item-news-body {
+							padding: 20px 45px 29px 50px;
+							@media screen and (max-width: $screen-sp) {
+								background: none;
+								padding: 20px 20px 29px 20px;
+							}
+							.item-news-date {
+								@include fontsize(26);
+							}
+							.item-news-title {
+								margin: 0;
+								padding: 5px 0 11px;
+								@include fontsize(20);
+							}
+						}
+						& + .item-news {
+							border: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	.page.page-news-detail {
+		margin-bottom: 61px;
+		select {
+			&.archive {
+				font-weight: normal;
+			}
+		}
+		.inner-content {
+			// .ct-header {
+			// 	.name-cate {
+			// 		@include setfont(18, bold, $cl-main, $fontrobo);
+			// 		text-transform: uppercase;
+			// 		display: block;
+			// 		@include transition;
+			// 		a {
+			// 			position: relative;
+			// 			padding-left: 17px;
+			// 			color: $cl-main;
+			// 			border-bottom: 1px solid $cl-main;
+			// 			padding-bottom: 4px;
+			// 			letter-spacing: 2px;
+			// 			&:before {
+			// 				content: '';
+			// 				position: absolute;
+			// 				background: url('../images/ic-back-detail.png') center no-repeat;
+			// 				width: 8px;
+			// 				height: 14px;
+			// 				top: 3px;
+			// 				left: 0;
+			// 			}
+			// 		}
+			// 	}
+			// 	.box-title {
+			// 		@include setfont(40, bold, $cl-main, $fontrobo);
+			// 		text-transform: uppercase;
+			// 		letter-spacing: 5px;
+			// 		border-bottom: 1px solid $cl-main;
+			// 		padding-bottom: 0;
+			// 		display: table;
+			// 		margin-top: 0;
+			// 		margin-bottom: 0;
+			// 	    margin-top: -14px;
+			// 		line-height: 1.3;
+			// 		@include transition;
+			// 		@media screen and (max-width: $screen-sp) {
+			// 			margin-top:0;
+			// 			@include fontsize(28);
+			// 			letter-spacing: 2px;
+			// 		}
+			// 	}
+			// }
+			.ct-body {
+				margin-top: 42px;
+				.ctbd-header {
+					@media screen and (min-width: 769px) {
+						position: relative;
+						margin-bottom: 112px;
+						max-height: 685px;
+						height: 100%;
+						overflow: hidden;
+				    }
+					figure {
+						text-align: center;
+						@media screen and (max-width: $screen-sp) {
+							margin: 0 -10px;
+							margin-bottom: 30px;
+						}
+					}
+					.info-page-detail {
+						position: absolute;
+						max-width: 402px;
+						width: 100%;
+						background: rgba($white, 0.7);
+					    top: 278px;
+    					padding: 43px 40px 35px 121px;
+    					@media screen and (max-width: $screen-sp) {
+					    	position: relative;
+					    	background: none;
+					    	padding: 0;
+					    	max-width: none;
+					    	top: 0;
+					    }
+						.if-page {
+							@include setfont(25, bold, $cl-main, $fontrobo);
+							text-transform: uppercase;
+							letter-spacing: 2.5px;
+						    border-bottom: 1px solid $cl-main;
+						    padding-bottom: 14px;
+						    display: inline-block;
+							margin-bottom: 30px;
+						    @media screen and (max-width: $screen-sp) {
+						    	display: none;
+						    }
+						}
+						.if-date {
+							@include setfont(38, bold, $cl-main, $fontrobo);
+    						letter-spacing: 1px;
+    						@media screen and (max-width: $screen-sp) {
+						    	@include fontsize(26);
+						    }
+						}
+						.if-title-post {
+							@include fontsize(21);
+							margin-top: 14px;
+    						line-height: 2;
+    						@media screen and (max-width: $screen-sp) {
+						    	@include fontsize(22);
+						    }
+						}
+					}
+				}
+				.ctbd-content {
+					padding: 0 118px;
+					@include fontsize(20);
+					line-height: 2;
+					@include transition;
+					@media screen and (max-width: $screen-sp) {
+				    	padding: 0;
+				    }
+					p {
+						margin: 0;
+						@media screen and (max-width: $screen-sp) {
+							@include fontsize(16);
+						}
+					}
+				}
+			}
+		}
+	}
+	.box-sns.page-news {
+	 	.inner-content {
+		    padding-top: 37px;
+		}
+	}
+}

@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+footer {
+	background: #CCCCCC;
+	height: 270px;
+	@media screen and (max-width: 845px) {
+		height: auto;
+	}
+    .inner-content {
+    	max-width: 1266px;
+    	margin: auto;
+    	position: relative;
+    	@media screen and (max-width: 845px) {
+    		padding-bottom: 50px;
+    	}
+    	.ft-content {
+    		@include dlflex;
+			align-items: center;
+			justify-content: space-between;
+			padding-top: 66px;
+			@media screen and (max-width: 480px) {
+				flex-wrap: wrap;
+			}
+    		.ft-col {
+    			@include dlflex;
+    			align-items: center;
+    			justify-content: space-between;
+    			@include transition;
+				@media screen and (max-width: $screen-sp) {
+					@include flexwidth(100%);
+				}
+    			.ft-logo {
+    				// margin-left: -5px;
+    				margin-top: -11px;
+    				@media screen and (max-width: 840px) {
+    					margin: 0 auto 20px;
+    				}
+    			}
+    			p {
+    				@include setfont(13, bold, null, $fontyugo);
+    				letter-spacing: 1.2px;
+    				line-height: 2.4;
+    				margin-top: 11px;
+    				a {
+    					color: $cl-main;
+    				}
+    			}
+    			.copyright {
+    				@include setfont(13, null, null, $fontrobo);
+    				letter-spacing: 1px;
+    				padding-top: 78px;
+    				margin-right: 120px;
+                    #language {
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+    				@media screen and (max-width: 920px) {
+			            margin-right: 100px;
+			        }
+    				@media screen and (max-width: $screen-sp) {
+						padding-top: 0;
+						margin-right: 0;
+					}
+    			}
+    			&:first-child {
+    				margin-right: 43px;
+    				@include flexwidth(13%);
+    				max-width: 155px;
+    				min-width: 70px;
+    				@media screen and (max-width: $screen-sp) {
+    					margin-right: 25px;
+					}
+    			}
+    			&:last-child {
+    				@include flexwidth(84.36%);
+    				@media screen and (max-width: 840px) {
+						flex-wrap: wrap;
+						p, .copyright {
+							@include flexwidth(100%);
+						}
+						.copyright {
+							padding-top: 15px;
+						}
+					}
+    			}
+    			@media screen and (max-width: 480px) {
+    				margin: 0 !important;
+    				@include flexwidth(100% !important);
+    			}
+    		}
+    	}
+    	.scroll-top {
+    		position: absolute;
+		    right: 3px;
+    		bottom: 6px;
+    		cursor: pointer;
+    		@media screen and (max-width: $screen-sp) {
+				right: 0;
+    			bottom: 0;
+    			max-width: 60px;
+			}
+    	}
+    }
+}
